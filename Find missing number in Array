@@ -1,0 +1,23 @@
+public static int findMissingNumber(int[] arr) {
+		
+		int n = arr.length+1;
+		
+		int expected_val = n*(n+1)/2;
+		int actual_val = 0;
+		
+		for(int num:arr) {
+			actual_val = actual_val+num;
+		}
+		
+		return expected_val - actual_val;
+		
+		
+	}
+
+    public static void main(String[] args) {
+    	
+        int[] nums = {1, 3, 4, 5, 6};
+        System.out.println(findMissingNumber(nums));
+        
+       
+    }
