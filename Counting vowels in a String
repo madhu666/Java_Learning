@@ -1,0 +1,26 @@
+public class Basic{
+	
+	public static int CountVowels(String str) {
+		
+		String vowelString = "aeiouAEIOU";
+		int count=0;
+		
+		for(char c : str.toCharArray()) {
+			if(vowelString.indexOf(c)!=-1) {
+				count++;
+			}
+			
+		}
+		
+	return count;
+	
+	
+	}
+	
+
+    public static void main(String[] args) {
+    System.out.println(CountVowels("xysh"));
+    	
+    }
+	
+}
