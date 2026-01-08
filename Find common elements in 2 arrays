@@ -1,0 +1,34 @@
+public class Basic{
+	
+	public static void CommonElements(int[] a, int[] b) {
+		
+		Set<Integer> setA = new HashSet<Integer>();
+		Set<Integer> intersection = new HashSet<Integer>();
+		
+		for(int num: a) {
+			
+			setA.add(num);
+		}
+		
+		for(int num :b) {
+			if(setA.contains(num)){
+				intersection.add(num);
+			}
+		}
+		System.out.println(intersection);
+		
+	}
+
+	
+	
+
+    public static void main(String[] args) {
+    	
+    	int[] setA = {2,3,45,6};
+    	int[] intersectionresult = {3,6,43,5};
+    
+    	CommonElements(setA, intersectionresult);
+    }
+	
+}
+		
