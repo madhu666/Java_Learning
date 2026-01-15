@@ -1,0 +1,30 @@
+public class Basic{
+	
+	public static int removeduplicates(int[] arr) {
+		
+		int write =1;
+		
+		for(int i=1; i<arr.length;i++) {
+			
+			if(arr[i]!=arr[i-1]) {
+				arr[write] = arr[i];
+				write++;
+			}
+		}
+		
+		return write;
+		
+	}
+    
+    public static void main(String[] args) {
+    	
+    	  int[] nums = {0, 0, 1, 1, 2, 2, 3};
+          int k = removeduplicates(nums);
+
+          System.out.println("k = " + k);
+          System.out.println("unique = " + Arrays.toString(Arrays.copyOf(nums, k)));
+      }
+    	
+}
+	
+
