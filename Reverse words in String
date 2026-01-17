@@ -1,0 +1,21 @@
+public class ReverseEachWord {
+    public static String reverseEachWord(String s) {
+        if (s == null) return null;
+
+        String[] parts = s.split(" ", -1); // -1 keeps empty tokens if multiple spaces
+        StringBuilder out = new StringBuilder(s.length() + 8);
+
+        for (int i = 0; i < parts.length; i++) {
+            out.append(new StringBuilder(parts[i]).reverse());
+            if (i < parts.length - 1) out.append(' ');
+        }
+        return out.toString();
+    }
+
+    public static void main(String[] args) {
+        System.out.println(reverseEachWord("Java is fun"));      // avaJ si nuf
+        System.out.println(reverseEachWord("  hi  there "));     //   ih  ereht 
+        System.out.println(reverseEachWord(""));                 // ""
+        System.out.println(reverseEachWord(null));               // null
+    }
+}
