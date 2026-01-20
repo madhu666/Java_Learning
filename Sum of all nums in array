@@ -1,0 +1,31 @@
+public class Basic{
+	
+	public static int SumOfNums(int[] arr) {
+		
+		int sum = 0;
+		
+		for(int i=0; i<arr.length+1; i++) {
+			sum = sum+i;
+			
+		}
+		
+		return sum;
+	}
+  
+	
+	
+
+    public static void main(String[] args) {
+    	
+    	int[] nums = {1,2,3,4,5};
+    	
+    	System.out.println(nums.length);
+     
+    	System.out.println(SumOfNums(nums));
+    
+	
+}
+		
+		
+}
+ 
