@@ -1,0 +1,31 @@
+
+
+public class Basic{
+	
+	public static int largeEle(int[] arr){
+		int max = Integer.MIN_VALUE;
+		  int second = Integer.MIN_VALUE;
+
+		  for (int x : arr) {
+		    if (x > max) {                
+		      second = max;               
+		      max = x;
+		    } else if (x < max && x > second) { // between gold and silver
+		      second = x;
+		    }
+		  }
+
+		  if (second == Integer.MIN_VALUE) {
+		    throw new IllegalArgumentException("No second distinct largest number");
+		  }
+		  return second;
+		  
+	}
+    public static void main(String[] args) {
+    	int[] nums = {4,6,2,7,3};
+    	
+    	System.out.println(largeEle(nums));
+    
+    }   
+}
+	
