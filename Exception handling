@@ -1,0 +1,35 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+
+class InvalidAgeException extends Exception {
+    public InvalidAgeException(String message) { super(message); }
+}
+
+public class ExceptionDemo {
+
+    static void readFirstLine(String path) throws IOException {
+        // try-with-resources auto-closes the reader
+        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+            System.out.println(br.readLine());
+        }
+    }
+
+    static void register(int age) throws InvalidAgeException {
+        if (age < 18) throw new InvalidAgeException("Must be 18+");
+        System.out.println("Registered");
+    }
+
+    public static void main(String[] args) {
+        try {
+            readFirstLine("missing.txt");          // checked exception
+            register(16);                          // custom checked exception
+        } catch (IOException e) {
+            System.out.println("File issue: " + e.getMessage());
+        } catch (InvalidAgeException e) {
+            System.out.println("Validation issue: " + e.getMessage());
+        } finally {
+            System.out.println("Cleanup/always runs");
+        }
+    }
+}
