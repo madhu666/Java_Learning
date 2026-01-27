@@ -1,0 +1,33 @@
+class User {
+    private final String username;
+    private int age;
+
+    public User(String username, int age) {
+        if (username == null || username.isBlank()) {
+            throw new IllegalArgumentException("username is required");
+        }
+        this.username = username;
+        setAge(age); // reuse validation
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        if (age < 0) throw new IllegalArgumentException("age must be >= 0");
+        this.age = age;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        User u = new User("sam", 25);
+        u.setAge(26);
+        System.out.println(u.getUsername() + " -> " + u.getAge());
+    }
+}
